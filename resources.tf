@@ -90,5 +90,4 @@ resource "azurerm_windows_virtual_machine" "vm" {
       storage_account_type = "Standard_LRS"
       caching = "ReadWrite"
     }
-  
 }
