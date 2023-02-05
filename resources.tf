@@ -45,9 +45,9 @@ resource "azurerm_virtual_network_gateway" "vngw" {
   vpn_client_configuration {
     address_space = [ "172.16.0.0/24" ]
     vpn_client_protocols = [ "OpenVPN" ]
-    aad_tenant = "https://login.microsoftonline.com/72d7263b-25da-40d1-aefe-040dc7e089e6"
-    aad_audience = "6a85bcc0-3e0b-4d98-b7d7-2efc706768f6"
-    aad_issuer = "https://sts.windows.net/72d7263b-25da-40d1-aefe-040dc7e089e6/"
+    aad_tenant = ""
+    aad_audience = ""
+    aad_issuer = ""
   }
 }
 
@@ -75,8 +75,8 @@ resource "azurerm_windows_virtual_machine" "vm" {
     resource_group_name = azurerm_resource_group.rg.name
     location = azurerm_resource_group.rg.location
     size = "Standard_F2"
-    admin_username = "admin.icos"
-    admin_password = "icosidodecX-0"
+    admin_username = ""
+    admin_password = ""
     network_interface_ids = [ azurerm_network_interface.vnic01.id,]
 
     source_image_reference {
